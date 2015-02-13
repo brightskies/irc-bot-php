@@ -1,0 +1,11 @@
+{
+    "name": "brightskies/irc-bot-php",
+    "description": "An IRC bot written in PHP",
+    "authors": [
+        {
+            "name": "Bright Skies",
+            "email": "brightskies@codeon.co.uk"
+        }
+    ],
+    "require": {}
+}
