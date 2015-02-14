@@ -7,5 +7,10 @@
             "email": "brightskies@codeon.co.uk"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "BrightSkies\\IrcBotPhp\\":""
+        }
+    }
 }
