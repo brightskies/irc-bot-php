@@ -44,13 +44,27 @@ class IrcServerConnection
         $this->commandUser("awesomebot", "hostname", "server", ":BOT");
         while(!feof($this->connection->getSock()))
         {
-            echo $this->connection->receive();
+            var_dump($this->parse($this->connection->receive()));
         }
     }
 
     public function disconnect()
     {
 
+    }
+
+    public function parse($input)
+    {
+        $pattern = "/^(:(?<prefix>\S+) )?(?<command>\S+)( (?!:)(?<params>.+?))?( :(?<trail>.+))?$/";
+
+        preg_match($pattern, $input, $matches);
+        
+        return [
+            "prefix" => $matches["prefix"],
+            "command" => $matches["command"],
+            "params" => $matches["params"],
+            "trail" => $matches["trail"]
+        ];
     }
 
 }
