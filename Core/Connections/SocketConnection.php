@@ -43,7 +43,7 @@ class SocketConnection implements ConnectorInterface
 
     public function send($message)
     {
-        fwrite($this->sock, $message);
+        fwrite($this->sock, $message."\r\n");
     }
 
     public function receive()
