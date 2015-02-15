@@ -1,5 +1,6 @@
 <?php
-namespace BrightSkies\IrcBotPhp\Core\Connections\Models;
+namespace BrightSkies\IrcBotPhp\Core\Connections;
+use BrightSkies\IrcBotPhp\Core\Models\ConnectorInterface;
 use BrightSkies\IrcBotPhp\Core\Exceptions\ConnectionException;
 
 class SocketConnection implements ConnectorInterface
