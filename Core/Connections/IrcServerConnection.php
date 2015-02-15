@@ -41,12 +41,8 @@ class IrcServerConnection
         $this->connection->connect();
         while(!feof($this->connection->getSock()))
         {
-        }
-//        $this->connection->connect()->send("USER BOT\r\n");
-
-        /*while (!feof($this->connection)) {
             echo $this->connection->receive();
-        }*/
+        }
     }
 
     public function disconnect()
