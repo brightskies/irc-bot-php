@@ -39,6 +39,9 @@ class IrcServerConnection
     public function connect()
     {
         $this->connection->connect();
+        $this->commandPass("randompassword");
+        $this->commandNick("awesomebot");
+        $this->commandUser("awesomebot", "hostname", "server", ":BOT");
         while(!feof($this->connection->getSock()))
         {
             echo $this->connection->receive();
