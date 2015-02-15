@@ -8,6 +8,6 @@ $quakenet   = $servers['quakenet'];
 
 $connection = new \BrightSkies\IrcBotPhp\Core\Connections\SocketConnection($quakenet['address'], $quakenet['port']);
 
-$connection->connect()->send("USER BOT\r\n");
+$connection->connect();
 
 echo $connection->receive();
