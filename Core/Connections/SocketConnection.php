@@ -10,6 +10,14 @@ class SocketConnection implements ConnectorInterface
     private $sock;
 
     /**
+     * @return mixed
+     */
+    public function getSock()
+    {
+        return $this->sock;
+    }
+
+    /**
      * @param $address
      * @param $port
      */

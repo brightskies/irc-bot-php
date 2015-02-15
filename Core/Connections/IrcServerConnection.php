@@ -30,8 +30,18 @@ class IrcServerConnection
         return $this;
     }
 
+    public function pongCommand($message)
+    {
+        $this->connection->send("PONG $message");
+        return $this;
+    }
+
     public function connect()
     {
+        $this->connection->connect();
+        while(!feof($this->connection->getSock()))
+        {
+        }
 //        $this->connection->connect()->send("USER BOT\r\n");
 
         /*while (!feof($this->connection)) {
